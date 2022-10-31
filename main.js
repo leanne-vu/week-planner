@@ -4,7 +4,6 @@ var addEntry = document.querySelector('.add-entry');
 var modal = document.querySelector('#modal');
 var submit = document.querySelector('.submit-button');
 var form = document.querySelector('#forms');
-var datastart = document.querySelector('.data-start');
 var table = document.querySelector('table');
 
 addEntry.addEventListener('click', handleClick);
