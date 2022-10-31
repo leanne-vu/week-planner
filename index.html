@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Week Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -55,9 +56,60 @@
               <th>Description</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            <tr>
+              <td>123</td>
+              <td>123</td>
+
+            </tr>
+
+          </tbody>
         </table>
       </div>
+    </div>
+  </div>
+
+  <div class="container-modal">
+    <div class="pop-out">
+      <div class="row-modal">
+        <div class="modal-column">
+          <h1>Add Entry</h1>
+        </div>
+        <div class="modal-form">
+          <form>
+            <label for="week"></label>
+            <select name="days" id="week">
+              <option value="select">Day of Week</option>
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+            </select>
+
+            <label for="time"></label>
+            <select name="days" id="time">
+              <option value="clock">Time</option>
+              <option value="eightAm">8:00am</option>
+              <option value="nineAm">9:00am</option>
+              <option value="tenAm">10:00am</option>
+              <option value="elevenAm">11:00am</option>
+              <option value="twelvePm">12:00pm</option>
+              <option value="onePm">1:00pm</option>
+              <option value="twoPm">2:00pm</option>
+            </select>
+
+            <label for="description"></label>
+            <textarea required rows="5" name="message" id="description" placeholder="Description"></textarea>
+            <div class="form-actions">
+              <input type="submit" name="submit" value="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+
     </div>
   </div>
   <script src="main.js"></script>
