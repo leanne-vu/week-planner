@@ -1,3 +1,1 @@
-var newData = [
-
-];
+var newData = [];

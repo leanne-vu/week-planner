@@ -2,6 +2,8 @@ var addEntry = document.querySelector('.add-entry');
 var modal = document.querySelector('#modal');
 var submit = document.querySelector('.submit-button');
 var form = document.querySelector('#forms');
+var datastart = document.querySelector('.data-start');
+var table= document.querySelector('table');
 
 addEntry.addEventListener('click', handleClick);
 submit.addEventListener('submit', handleSubmit);
@@ -14,6 +16,7 @@ function handleClick(event) {
 }
 
 function handleSubmit(event) {
+  event.preventDefault();
   if (event.target.className === '.submit-button') {
     modal.class = 'container-modal hidden';
   }
@@ -28,7 +31,17 @@ function handleSubmit(event) {
 }
 
 function tableEntry(event) {
-/*      <table>
+  var tableBody = document.createElement('tbody')
+  var inputData = document.createElement('tr');
+  var timeEntry = document.createElement('td');
+  timeEntry.setAttribute('class', 'input-time');
+  var $description = document.createAttribute('td');
+  $description.setAttribute('class', 'input-desc');
+  inputData.appendChild(timeEntry, $description);
+  tableBody.appendChild(inputData);
+  table.appendChild(tableBody);
+}
+  /*      <table>
           <thead>
             <tr>
               <th>Time</th>
