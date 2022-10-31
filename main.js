@@ -1,26 +1,28 @@
+/* global newData */
+
 var addEntry = document.querySelector('.add-entry');
 var modal = document.querySelector('#modal');
 var submit = document.querySelector('.submit-button');
 var form = document.querySelector('#forms');
 var datastart = document.querySelector('.data-start');
-var table= document.querySelector('table');
+var table = document.querySelector('table');
 
 addEntry.addEventListener('click', handleClick);
-submit.addEventListener('submit', handleSubmit);
+form.addEventListener('submit', handleSubmit);
+submit.addEventListener('click', handleClickSubmit);
 
 function handleClick(event) {
   if (event.target.tagName === 'BUTTON') {
     modal.className = 'container-modal';
   }
-
 }
-
+function handleClickSubmit(event) {
+  if (event.target.className === 'submit-button') {
+    modal.className = 'container-modal hidden';
+  }
+}
 function handleSubmit(event) {
   event.preventDefault();
-  if (event.target.className === '.submit-button') {
-    modal.class = 'container-modal hidden';
-  }
-
   var data = {
     day: form.elements.week.value,
     time: form.elements.time.value,
@@ -28,20 +30,30 @@ function handleSubmit(event) {
   };
 
   newData.push(data);
+  table.append(tableEntry(data));
+  form.reset();
 }
 
-function tableEntry(event) {
-  var tableBody = document.createElement('tbody')
+for (var i = 0; i < newData.length; i++) {
+  var $data = tableEntry(newData[i]);
+  table.appendChild($data);
+}
+
+function tableEntry(data) {
+  var tableBody = document.createElement('tbody');
   var inputData = document.createElement('tr');
   var timeEntry = document.createElement('td');
-  timeEntry.setAttribute('class', 'input-time');
-  var $description = document.createAttribute('td');
-  $description.setAttribute('class', 'input-desc');
-  inputData.appendChild(timeEntry, $description);
+  timeEntry.setAttribute('class', 'inputTime');
+  timeEntry.textContent = data.time;
+  var $description = document.createElement('td');
+  $description.textContent = data.description;
+  $description.setAttribute('class', 'inputDesc');
+  inputData.appendChild(timeEntry);
+  inputData.appendChild($description);
   tableBody.appendChild(inputData);
-  table.appendChild(tableBody);
+  return tableBody;
 }
-  /*      <table>
+/*      <table>
           <thead>
             <tr>
               <th>Time</th>
@@ -55,5 +67,3 @@ function tableEntry(event) {
             </tr>
           </tbody>
         </table> */
-
-}
