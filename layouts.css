@@ -1,0 +1,23 @@
+.text-align {
+  text-align: center;
+}
+
+.column-half {
+  flex-basis: 100%;
+}
+
+.modal-column {
+  flex-basis: 100%;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.margin-top-bot {
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
+}

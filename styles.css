@@ -43,12 +43,14 @@ button {
 }
 
 .add-entry:hover {
-  background-color: blue;
+  background-color: rgb(149, 188, 241);
 }
 
 /* modal form */
 
 .container-modal {
+  display: flex;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -61,10 +63,39 @@ button {
 }
 
 .pop-out {
-  position: absolute;
   background-color: white;
-  left: 1000px;
-  top: 200px;
   width: 600px;
-  height: 200px;
+  height: 270px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 160px;
+}
+
+.modal-form {
+  margin: 20px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 3px;
+}
+
+.form-actions {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+.submit-button {
+  cursor: pointer;
+  border: 2px solid black;
+  background-color: white;
+  box-shadow: 1px 1px;
+  padding: 0 10px;
+}
+
+select,
+textarea {
+  border: 2px solid black;
 }
